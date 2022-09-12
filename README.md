@@ -3,7 +3,7 @@
 Print Gpu Info Like: 
 ```json
 GPUFeatureStatus:
-index.html:23 {
+{
     "2d_canvas": "enabled",
     "canvas_oop_rasterization": "disabled_off",
     "direct_rendering_display_compositor": "disabled_off_ok",
@@ -19,8 +19,9 @@ index.html:23 {
     "webgl2": "enabled",
     "webgpu": "disabled_off"
 }
-index.html:25 GPUInfo:
-index.html:27 {
+
+GPUInfo:
+{
     "auxAttributes": {
         "amdSwitchable": false,
         "canSupportThreadedTextureMailbox": false,
