@@ -4,7 +4,8 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist-win": "electron-builder --win"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -16,7 +17,24 @@
   ],
   "author": "GitHub",
   "license": "CC0-1.0",
-  "devDependencies": {
-    "electron": "^20.1.2"
+  "dependencies": {
+    "@electron/remote": "^2.0.8",
+    "electron-nightly": "^22.0.0-nightly.20220908"
+  },
+  "build": {
+    "productName": "test",
+    "copyright": "cocos",
+    "appId": "com.cocos.test",
+    "icon": "./public/icon",
+    "directories": {
+      "output": "out"
+    },
+    "mac": {
+      "target": "dmg",
+      "mergeASARs": false,
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false
+    },
+    "asar": false
   }
 }
