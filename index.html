@@ -16,7 +16,7 @@
     <!-- You can also require other files to run in this process -->
     <script src="./renderer.js"></script>
     <script>
-      window.remote = window.require && require('@electron/remote')
+      window.remote = require('@electron/remote')
       window.app = remote.app
 
       console.log('GPUFeatureStatus:')
@@ -27,6 +27,36 @@
         console.log(JSON.stringify(completeObj, null, 4));
       });
 
+      window.sys = require('systeminformation')
+
+      var os = globalThis.require('os')
+      sys.cpu(ret => {
+        console.log(`cpu: ${ret.brand}`)
+      })
+      sys.graphics(ret => {
+        console.log('systeminformation graphics : ')
+
+        let args = {}
+
+        if (ret.controllers) {
+            ret.controllers.forEach((c, index) => {
+                args['controller_' + index] = c.name
+            })
+        }
+
+        if (ret.displays) {
+            ret.displays.forEach((d, index) => {
+                args['display_' + index] = `${d.currentResX}_${d.currentResY}`
+                if (d.main) {
+                    args['display_' + index] += '_main'
+                }
+            })
+        }
+
+        args.platform = os.platform()
+        
+        console.log(JSON.stringify(args, null, 4))
+      })
     </script>
   </body>
 </html>
