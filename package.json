@@ -18,7 +18,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "dependencies": {
-    "@electron/remote": "^2.0.8",
+    "@electron/remote": "^2.0.9",
     "electron-nightly": "^22.0.0-nightly.20220908",
     "systeminformation": "^5.12.6"
   },
