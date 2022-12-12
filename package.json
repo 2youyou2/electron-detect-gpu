@@ -20,7 +20,7 @@
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "electron-nightly": "^22.0.0-nightly.20220908",
-    "systeminformation": "^5.12.6"
+    "systeminformation": "^5.16.6"
   },
   "build": {
     "productName": "test",
